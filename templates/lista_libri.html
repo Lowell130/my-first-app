@@ -1,0 +1,38 @@
+   
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{% for object in object_list %}
+
+<a href="{{ object.get_absolute_url }}"><h1>{{ object.titolo }}</h1></a>
+
+<p><a href="{{ object.link }}"><img src="{{ object.image }}"></a></p>
+
+<h2>{{ object.autore }}</h2>
+<p>Prezzo: {{ object.prezzo }}</p>
+<p>{{ object.descrizione|safe|truncatewords_html:50|linebreaks|cut:"  " }}</p>
+<p>{{ object.asin }}</p>
+<p>Valutazione: {{ object.valutazione }} stelle di 5</p>
+
+<a class="btn btn-primary" href="{{ object.link }}" role="button">Acquista</a>
+
+<br><br>
+{% endfor %}
+
+
+<div>
+
+     {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">Precedente</a>
+    {% endif %}
+
+     {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Successiva</a>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
