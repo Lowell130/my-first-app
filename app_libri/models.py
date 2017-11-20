@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.core.urlresolvers import reverse
 
 """
@@ -26,4 +27,9 @@ class Book(models.Model):
     
     def get_absolute_url(self):
         return reverse("singolo", kwargs={"id": self.id, "slug": self.slug})
-     
+
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = ['asin', 'titolo', 'autore', 'descrizione', 'valutazione', 'prezzo', 'link', 'image', 'data', 'slug']

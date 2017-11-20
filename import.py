@@ -12,6 +12,11 @@ from app_libri.models import Book
 data = csv.reader(
 	open('test_import.csv'), delimiter=",")
 
+
+
+
+#RIVEDERE LE POSIZIONE DELLE COLONNE PERCHé NON SI TROVANO    
+
 for row in data:
     if row[0] != 'ASIN':
         post = Book()
@@ -27,6 +32,6 @@ for row in data:
 
        
        
-        
+       
 
     

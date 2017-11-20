@@ -11,7 +11,7 @@
 
 <p><a href="{{ object.link }}"><img src="{{ object.image }}"></a></p>
 
-<h2>{{ object.autore }}</h2>
+<h2>{{ object.autore|safe }}</h2>
 <p>Prezzo: {{ object.prezzo }}</p>
 <p>{{ object.descrizione|safe|truncatewords_html:50|linebreaks|cut:"  " }}</p>
 <p>{{ object.asin }}</p>
