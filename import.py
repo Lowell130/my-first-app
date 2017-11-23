@@ -15,7 +15,7 @@ data = csv.reader(
 
 
 
-#DA RIVEDERE LE POSIZIONE DELLE COLONNE PERCHé NON CORRISPONDONO CON QUELLE DEL FILE CSV
+
 
 for row in data:
     if row[0] != 'ASIN':
