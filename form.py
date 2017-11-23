@@ -1,5 +1,6 @@
 from django import forms
 
+# form per verifica campi CSV
 
 class BookForm(forms.Form):
     

@@ -25,9 +25,9 @@ for row in data:
         post.autore = row[2]
         post.descrizione = row[4]
         post.valutazione = row[6]
-        post.prezzo = row[7]
-        post.link = row[21]
-        post.image = row[22]
+        post.prezzo = row[9]
+        post.link = row[24]
+        post.image = row[25]
         post.save()
 
        
